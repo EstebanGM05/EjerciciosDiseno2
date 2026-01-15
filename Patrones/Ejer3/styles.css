@@ -1,0 +1,57 @@
+/* Sobrescribe el estilo por defecto y establece el padding y el margen a cero */
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0
+}
+
+/* Texto color blanco en todas partes */
+
+body {
+  font-family: "lato", sans-serif;
+  color: white;
+}
+
+/* Hacer todo el texto de los links negro y sin decoración*/
+a {
+  color: black;
+  text-decoration: none;
+}
+
+
+h1 {
+  font-size: 30px;
+  font-weight: 600;
+  margin: 10px 0;
+  line-height: 1.2;
+}
+
+
+h2 {
+  font-size: 25px;
+  font-weight: 300;
+  margin: 10px 0;
+  line-height: 1.2;
+}
+
+p {
+  font-size: 30px;
+}
+
+/* Todas las imágenes deben ser del mismo tamañño que su contenedor*/
+img {
+  width: 100%;
+}
+
+/* Remover el estilo a los elementos de una lista */
+li {
+  list-style-type: none;
+}
+
+
+
+p {
+  font-size: 20px;
+  margin: 10px 0;
+}
