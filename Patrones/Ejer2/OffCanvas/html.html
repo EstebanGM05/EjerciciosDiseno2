@@ -1,19 +1,35 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Off Canvas</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <nav>Navbar</nav>
-    <div class="container">
-      <section class="columna1">Sección 1</section>
-      <section class="columna2">Sección 2</section>
-    </div>
-    <div class="container">
-  <section id="sidePanel" class="c1">Sección 1</section>
-  <section id="mainPanel" class="c2">Sección 2</section>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Menú Lateral Off-Canvas</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <nav>
+  <button id="menuBtn">☰ Abrir Menú</button>
+  <div style="margin-left: 20px;">Mi Aplicación</div>
+</nav>
+
+<div class="container">
+  <aside id="sidePanel" class="columna1">
+    <ul style="list-style: none; padding: 20px;">
+      <li><a href="#" style="color: white; text-decoration: none;">🏠 Inicio</a></li>
+      <li><a href="#" style="color: white; text-decoration: none;">📁 Proyectos</a></li>
+      <li><a href="#" style="color: white; text-decoration: none;">✉️ Contacto</a></li>
+    </ul>
+  </aside>
+
+  <main class="columna2">
+    <h2>Contenido de la página</h2>
+    <p>Ahora el botón debería ser visible y clicable incluso con el menú abierto.</p>
+  </main>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.4/hammer.min.js"></script>
-  </body>
+
+  <div id="overlay" class="overlay"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.4/hammer.min.js"></script>
+  <script src="script.js"></script>
+</body>
 </html>

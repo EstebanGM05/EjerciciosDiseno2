@@ -1,35 +1,101 @@
+/* Estilos generales */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  overflow-x: hidden; /* Evita el scroll horizontal */
+}
+
+/* 1. Aseguramos que el Nav esté SIEMPRE arriba */
+nav {
+  background: #333;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  position: sticky; /* O fixed */
+  top: 0;
+  width: 100%;
+  z-index: 2000; /* Un número muy alto para que nada lo tape */
+  box-sizing: border-box;
+}
+
+#menuBtn {
+  background: #444;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* 2. El Menú Lateral */
 .columna1 {
-  position: absolute;
+  position: fixed;
   width: 250px;
   height: 100vh;
-  -webkit-transition: -webkit-transform 0.3s ease-out;
+  background: #222; /* Color oscuro para contraste */
+  color: white;
+  top: 0; /* Empieza desde arriba */
+  left: 0;
+  z-index: 1000; /* Menor que el del nav (2000) */
+  transform: translateX(-250px);
   transition: transform 0.3s ease-out;
-  z-index: 1;
-}
-.columna1 {
-  -webkit-transform: translate(-250px, 0);
-  transform: translate(-250px, 0);
+  padding-top: 60px; /* IMPORTANTE: Espacio para que el nav no tape el primer enlace */
 }
 
 .columna1.open {
-  -webkit-transform: translate(0, 0);
-  transform: translate(0, 0);
+  transform: translateX(0);
 }
+
+/* 3. El contenido principal */
+.columna2 {
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.columna1 ul {
+  list-style: none;
+  padding: 20px;
+}
+
+.columna1 li {
+  margin-bottom: 15px;
+}
+
+/* Columna 2: Contenido */
 .columna2 {
   width: 100%;
-  height: 100vh;
-  position: absolute;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
 }
-@media (min-width: 600px) {
-  .container {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-flow: row nowrap;
-    flex-flow: row nowrap;
-  }
 
+/* Overlay opcional */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 5;
+}
+
+.overlay.active {
+  display: block;
+}
+
+/* Escritorio: Menú siempre visible */
+@media (min-width: 900px) {
   .columna1 {
-    -webkit-transform: translate(0, 0);
-    transform: translate(0, 0);
+    position: relative;
+    transform: translateX(0);
+  }
+  #menuBtn, .overlay {
+    display: none;
+  }
+  .container {
+    display: flex;
   }
 }
