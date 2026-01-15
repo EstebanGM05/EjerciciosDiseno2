@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <nav>Navbar</nav>
+    <nav><button id="menuBtn">Menu</button> Navbar</nav>
     <div class="container">
       <section class="columna1">Sección 1</section>
       <section class="columna2">Sección 2</section>
@@ -15,5 +15,12 @@
   <section id="mainPanel" class="c2">Sección 2</section>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.4/hammer.min.js"></script>
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const sidePanel = document.getElementById('sidePanel');
+  menuBtn.addEventListener('click', () => {
+    sidePanel.classList.toggle('open');
+  });
+</script>
   </body>
 </html>
