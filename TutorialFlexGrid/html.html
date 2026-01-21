@@ -1,25 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <link rel="stylesheet" href="../Ejer3/styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
-  crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Skilllz - Plataforma Educativa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
- <div class="navbar">
+
+    <div class="navbar">
         <div class="container flex">
-          <h1 class="logo">Skilllz</h1>
+            <h1 class="logo">Skilllz</h1>
             <nav>
-              <ul>
-                <li class="nav"><a class="outline" href="">Log in</a></li>
-                <li class="nav"><a href="" class="outline">Check courses</a 				</li>
-              </ul>
+                <ul>
+                    <li class="nav"><a class="outline" href="#">Log in</a></li>
+                    <li class="nav"><a href="#" class="outline">Check courses</a></li>
+                </ul>
             </nav>
         </div>
-      </div>
+    </div>
+
+    <section class="showcase">
+        <div class="container">
+            <div class="grid">
+                <div class="grid-item-1">
+                    <div class="showcase-text">
+                        <h1>Aprende cualquier habilidad digital que elijas, hoy!</h1>
+                        <p class="supporting-text">Más de 30,000 estudiantes están aprendiendo esto.</p>
+                    </div>
+                    <div class="showcase-form">
+                        <form>
+                            <input type="email" placeholder="Ingresa tu correo electrónico">
+                            <input type="submit" class="btn" value="Empieza a aprender">
+                        </form>
+                        <p class="little-info">Prueba nuestros cursos gratuitos</p>
+                    </div>
+                </div>
+                <div class="grid-item-2">
+                    <div class="image">
+                        <img src="./imagen/descarga.png" alt="Showcase Image" width="600" height="400">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="lower-container container">
+        <section class="stats">
+            <div class="flex">
+                <div class="stat">
+                    <i class="fa fa-folder-open fa-2x" aria-hidden="true"></i>
+                    <h3 class="title">Over 300 available courses</h3>
+                    <p class="text">Accede a una amplia biblioteca de contenidos actualizados y relevantes para el mercado laboral actual.</p>
+                </div>
+                <div class="stat">
+                    <i class="fa fa-graduation-cap fa-2x" aria-hidden="true"></i>
+                    <h3 class="title">Free certificate offered on all courses</h3>
+                    <p class="text">Obtén un reconocimiento oficial al finalizar tus estudios sin costo adicional.</p>
+                </div>
+                <div class="stat">
+                    <i class="fa fa-users fa-2x" aria-hidden="true"></i>
+                    <h3 class="title">Join a community of 30k+ learners</h3>
+                    <p class="text">Comparte experiencias y resuelve dudas con miles de estudiantes de todo el mundo.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonial">
+            <div class="grid-3">
+                <div class="card">
+                    <div class="circle">
+                        <img src="./imagen/descarga.jpg" alt="User Beth">
+                    </div>
+                    <h3>Beth</h3>
+                    <p>He aprendido redacción usando esta plataforma y diré que es la mejor plataforma para aprender. ¡Vale la pena!</p>
+                </div>
+                <div class="card">
+                    <div class="circle">
+                        <img src="./imagen/descarga (1).jpg" alt="User Chris">
+                    </div>
+                    <h3>Chris</h3>
+                    <p>He aprendido marketing de afiliados usando esta plataforma y es increíblemente intuitiva.</p>
+                </div>
+                <div class="card">
+                    <div class="circle">
+                        <img src="https://via.placeholder.com/90" alt="User Alex">
+                    </div>
+                    <h3>Alex</h3>
+                    <p>La mejor inversión para mi carrera profesional. Los cursos son prácticos y directos al punto.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container flex">
+            <div class="logo">
+                <h1>Skilllz</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Check courses</a></li>
+                    <li><a href="#">Log in</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
 </body>
 </html>

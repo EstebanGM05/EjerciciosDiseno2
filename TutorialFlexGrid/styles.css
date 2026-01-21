@@ -1,91 +1,258 @@
-/* Variables CSS */
-:root {
-    --main-white-color: white;
-    --main-purple-color: #9e89b8;
+/* Estilos Base y Reseteo */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
-/* Contenedor principal con Flexbox */
-.wrapper {
+body {
+    font-family: "Lato", sans-serif;
+    color: white;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+ul {
+    list-style-type: none;
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+p {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+img {
+    width: 100%;
+}
+
+/* Clases Utilitarias */
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.flex {
     display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-.wrapper>* {
-    padding: 20px;
-}
-
-.page-main {
-    flex-grow: 1;
-}
-
-/* Navegación del header */
-.page-header nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
-.page-header ul {
+/* Barra de Navegación */
+.navbar {
+    background-color: purple;
+    height: 70px;
+}
+
+.navbar .flex {
+    justify-content: space-between;
+    height: 100%;
+}
+
+.navbar h1 {
+    font-weight: 300;
+}
+
+.navbar ul {
     display: flex;
-    order: 1;
-    width: 100%;
-    margin-top: 15px;
 }
 
-/* Sección principal con imagen de fondo */
-.page-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 350px;
-    background: var(--main-purple-color) url(https://images.unsplash.com/photo-1557683316-973673baf926?w=1920&q=80) no-repeat center / cover;
-    background-blend-mode: luminosity;
-    color: var(--main-white-color);
+.navbar a {
+    color: white;
+    padding: 10px;
+    margin: 0 10px;
+    transition: 0.3s;
 }
 
-.page-main div {
-    max-width: 500px;
+.navbar a:hover {
+    color: #9867C5;
+    border-bottom: 3px solid #9867C5;
 }
 
-/* Footer */
-.page-footer {
-    display: flex;
-    flex-direction: column-reverse;
+/* Sección Showcase */
+.showcase {
+    height: 400px;
+    background-color: purple;
+    padding-top: 50px;
 }
 
-.page-footer ul {
-    display: flex;
-    font-size: 1.5rem;
-    margin-bottom: 5px;
+.grid {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    gap: 20px;
 }
 
-/* Responsive - Tablet y superior (≥550px) */
-@media screen and (min-width: 550px) {
-    .page-header ul {
-        width: auto;
-        margin-top: 0;
+.showcase p {
+    margin-bottom: 30px;
+}
+
+.showcase img {
+    box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.showcase input[type='email'] {
+    padding: 12px;
+    width: 250px;
+    border: none;
+    border-radius: 6px;
+}
+
+.btn {
+    padding: 12px 20px;
+    background: #9867C5;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.little-info {
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+/* Sección Estadísticas (Stats) */
+.lower-container {
+    padding: 40px 0;
+    color: black;
+}
+
+.stats .flex {
+    justify-content: space-around;
+    text-align: center;
+}
+
+.stat {
+    padding: 20px;
+}
+
+.stat i {
+    color: purple;
+    margin-bottom: 10px;
+}
+
+/* Sección Testimonios */
+.testimonial {
+    margin-top: 60px;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    position: relative;
+    text-align: center;
+}
+
+.circle {
+    width: 90px;
+    height: 90px;
+    border: 3px solid purple;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    position: absolute;
+    top: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+}
+
+.circle img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin-top: 40px;
+}
+
+/* Pie de Página */
+footer {
+    background-color: purple;
+    padding: 30px 0;
+    margin-top: 40px;
+}
+
+footer .flex {
+    justify-content: space-between;
+}
+
+footer a {
+    color: white;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    color: #9867C5;
+    border-bottom: 2px solid #9867C5;
+}
+
+/* --- MEDIA QUERIES (RESPONSIVE) --- */
+
+/* Tablets (768px o menos) */
+@media(max-width: 768px) {
+    .grid, .grid-3 {
+        grid-template-columns: 1fr;
     }
 
-    .page-header .cta-contact {
-        order: 1;
+    .showcase {
+        height: auto;
+        padding-bottom: 50px;
+        text-align: center;
     }
 
-    .page-footer {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+    .image {
+        width: 80%;
+        margin: 0 auto;
     }
 
-    .page-footer ul {
-        margin-bottom: 0;
+    .stats .flex {
+        flex-direction: column;
     }
 }
 
-/* Responsive - Desktop (≥768px) */
-@media screen and (min-width: 768px) {
-    .page-main {
-        padding-left: 90px;
+/* Móviles (500px o menos) */
+@media(max-width: 500px) {
+    .navbar {
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .navbar .flex {
+        flex-direction: column;
+    }
+
+    .navbar ul {
+        margin-top: 10px;
+    }
+
+    .showcase input[type='email'] {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .btn {
+        width: 100%;
+        margin-left: 0;
     }
 }
