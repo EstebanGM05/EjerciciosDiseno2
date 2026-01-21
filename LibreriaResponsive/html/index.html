@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ghost Comics | Tu Tienda de Cómics Favorita</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <header class="main-header"> <!-- Header -->
+      <div class="header-container">
+        <div class="header-title"> <!-- Titulo -->
+          <h1>Tienda Comics</h1>
+        </div>
+
+        <div class="logo-wrapper"> <!-- Logo -->
+          <img src="../images/logo.png" alt="Logotipo Ghost Comics" />
+        </div>
+      </div>
+    </header>
+
+    <nav class="main-nav"> <!-- Navegación -->
+      <div class="container nav-flex">
+        <form class="search-box"> <!-- Barra de búsqueda -->
+          <span class="search-icon">🔍</span>
+          <input type="text" placeholder="Buscar..." aria-label="Buscar" />
+        </form>
+        <ul class="nav-menu"> <!-- Menú de navegación -->
+          <li><a href="#" class="nav-button">Home</a></li> <!-- Enlace a Home -->
+          <li>
+            <a href="../html/paginaCompra.html" class="nav-button"
+              >Tienda on-line</a
+            >
+          </li> <!-- Enlace a Tienda -->
+          <li><a href=".footer" class="nav-button">Contacto</a></li> <!-- Enlace a Contacto -->
+        </ul>
+      </div>
+    </nav>
+
+    <main class="content-wrapper"> <!-- Contenido principal -->
+      <section class="presentation">
+        <article class="hero-content">
+          <h2>Bienvenido</h2> <!-- Título de bienvenida -->
+          <p>
+            ¡Bienvenido a nuestra tienda de cómics, el lugar donde la
+            imaginación cobra vida! Aquí encontrarás desde los clásicos que
+            marcaron generaciones hasta las últimas novedades del universo del
+            cómic. Sumérgete en un mundo de héroes, villanos y aventuras épicas,
+            descubre ediciones especiales, figuras de colección y mucho más.
+            ¡Prepárate para vivir tu próxima gran historia con nosotros!
+          </p> <!-- Descripción de la tienda -->
+          <a href="../html/paginaCompra.html" class="cta-button">Ver Catálogo</a> <!-- Botón de llamada a la acción -->
+        </article>
+        <aside class="hero-image">  <!-- Imagen de bienvenida -->
+          <img
+            src="../images/logoBienvenida.png"
+            alt="Colección de cómics destacados"
+          />
+        </aside>
+      </section>
+
+      <section class="news-section"> <!-- Sección de novedades -->
+        <h2 class="section-title">Novedades Destacadas</h2>
+        <div class="news-grid">
+          <article class="comic-card">
+            <img src="../images/magik.png" alt="Comic Magik" />
+            <h3>Magik: Dark Origin</h3>
+            <p class="price">44.99€</p>
+          </article>
+          <article class="comic-card">
+            <img src="../images/scarletWitch.png" alt="Comic Scarlet" />
+            <h3>Scarlet Witch #1</h3>
+            <p class="price">24.99€</p>
+          </article>
+          <article class="comic-card">
+            <img src="../images/blackWidow.png" alt="Comic Black Widow" />
+            <h3>Black Widow</h3>
+            <p class="price">19.99€</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="store-finder"> <!-- Sección de localización de tiendas -->
+  <h2>Nos puedes encontrar en estas tiendas</h2>
+  <div class="finder-container">
+    
+    <div class="map-placeholder"> <!-- Mapa embebido -->
+      <iframe 
+        name="mapa_tiendas" 
+        src="https://maps.google.com/maps?q=C/ Puentezuelas 3, Granada&output=embed" 
+        loading="lazy">
+      </iframe>
+    </div>
+
+    <aside class="store-list"> <!-- Lista de tiendas -->
+      <ul>
+        <li>
+          <a href="https://maps.google.com/maps?q=C/ Puentezuelas 3, Granada&output=embed" target="mapa_tiendas">
+            <strong>Granada:</strong> C/ Puentezuelas 3
+          </a>
+        </li>
+        <li>
+          <a href="https://maps.google.com/maps?q=Calle de Alcalá, 245, Madrid&output=embed" target="mapa_tiendas">
+            <strong>Madrid:</strong> Calle de Alcalá, 245
+          </a>
+        </li>
+        <li>
+          <a href="https://maps.google.com/maps?q=Carrer de Provença, 158, Barcelona&output=embed" target="mapa_tiendas">
+            <strong>Barcelona:</strong> Carrer de Provença, 158
+          </a>
+        </li>
+        <li>
+          <a href="https://maps.google.com/maps?q=Av. de las Tres Cruces, 42, Zamora&output=embed" target="mapa_tiendas">
+            <strong>Zamora:</strong> Av. de las Tres Cruces, 42
+          </a>
+        </li>
+        <li>
+          <a href="https://maps.google.com/maps?q=Calle del Castillo, 85, Santa Cruz de Tenerife&output=embed" target="mapa_tiendas">
+            <strong>Tenerife:</strong> Calle del Castillo, 85
+          </a>
+        </li>
+      </ul>
+    </aside>
+  </div>
+</section>
+    </main>
+
+    <footer class="main-footer"> <!-- Pie de página -->
+      <div class="footer-container">
+        <div class="footer-social">
+          <a href="https://wa.me/1234567890" target="_blank"
+            ><img
+              src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+              alt="WhatsApp"
+          /></a>
+          <a href="https://www.instagram.com/ghostcomicsstore" target="_blank"
+            ><img
+              src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg"
+              alt="Instagram"
+          /></a>
+          <a href="https://www.tiktok.com/@ghostcomicsstore" target="_blank"
+            ><img
+              src="https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg"
+              alt="TikTok"
+          /></a>
+        </div>
+
+        <nav class="footer-legal"> <!-- Enlaces legales -->
+          <a href="#">Politica de Privacidad</a>
+          <a href="#">Cookies</a>
+        </nav>
+      </div>
+
+      <div class="footer-copyright"> <!-- Derechos de autor -->
+        <p>&copy; Esteban González Morales</p> <!-- Derechos de autor -->
+      </div>
+    </footer>
+  </body>
+</html>

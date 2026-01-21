@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catálogo - Ghost Comics</title> <!-- Título de la página -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/styleShop.css" />
+  </head> 
+  <body> 
+    <header class="main-header">
+      <div class="container header-flex">
+        <h1 class="brand-title">Tienda Comics</h1>
+        <div class="logo-container">
+          <img src="../images/logo.png" alt="Ghost Comics Logo" />
+        </div>
+      </div>
+    </header>
+
+    <nav class="main-nav"> <!-- Navegación -->
+      <div class="container nav-flex">
+        <form class="search-box"> <!-- Barra de búsqueda -->
+          <span class="search-icon">🔍</span>
+          <input
+            type="text"
+            placeholder="Buscar cómics..."
+            aria-label="Buscar"
+          />
+        </form> 
+        <ul class="nav-menu">
+          <li><a href="../html/index.html" class="nav-button">Home</a></li>
+          <li>
+            <a href="paginaCompra.html" class="nav-button">Tienda on-line</a>
+          </li>
+          <li><a href=".footer" class="nav-button">Contacto</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="container shop-layout"> <!-- Layout de la tienda -->
+      <aside class="categories-sidebar"> <!-- Barra lateral de categorías -->
+        <h2 class="sidebar-title">Géneros</h2>
+        <nav class="category-list">
+          <ul>
+            <li><a href="#">Superhéroes</a></li>
+            <li><a href="#">Novela Gráfica</a></li>
+            <li><a href="#">Manga</a></li>
+            <li><a href="#">Ciencia Ficción</a></li>
+            <li><a href="#">Terror</a></li>
+            <li><a href="#">Infantil</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <section class="products-catalog"> <!-- Catálogo de productos -->
+        <header class="catalog-header">
+          <h2>CATÁLOGO DE ARTÍCULOS</h2>
+        </header>
+
+        <div class="product-grid">
+          <article class="product-card">
+            <header class="card-top">
+              <h3>Emma Frost</h3>
+            </header>
+            <div class="card-center">
+              <img src="../images/emma.png" alt="Comic Emma Frost" />
+            </div>
+            <footer class="card-bottom">
+              <p class="description">Edición Especial Marvel</p>
+              <div class="price-row">
+                <span class="price">24.99€</span>
+                <button class="cart-btn">🛒</button>
+              </div>
+            </footer>
+          </article>
+
+          <article class="product-card"> 
+            <header class="card-top">
+              <h3>Angela</h3>
+            </header>
+            <div class="card-center">
+              <img src="../images/angela.png" alt="Comic Angela" />
+            </div>
+            <footer class="card-bottom">
+              <p class="description">Debut de Angela 1983</p>
+              <div class="price-row">
+                <span class="price">22.99€</span>
+                <button class="cart-btn">🛒</button>
+              </div>
+            </footer>
+          </article>
+
+          <article class="product-card">
+            <header class="card-top">
+              <h3>Phoenix</h3>
+            </header>
+            <div class="card-center">
+              <img src="../images/phoenix.png" alt="Comic Phoenix" />
+            </div>
+            <footer class="card-bottom">
+              <p class="description">Resurrección Vol. 1</p>
+              <div class="price-row">
+                <span class="price">24.99€</span>
+                <button class="cart-btn">🛒</button>
+              </div>
+            </footer>
+          </article>
+
+          <article class="product-card">
+            <header class="card-top">
+              <h3>Luna Snow</h3>
+            </header>
+            <div class="card-center">
+              <img src="../images/luna.png" alt="Comic Luna" />
+            </div>
+            <footer class="card-bottom">
+              <p class="description">Marvel Rivals Vol. 1</p>
+              <div class="price-row">
+                <span class="price">17.99€</span>
+                <button class="cart-btn">🛒</button>
+              </div>
+            </footer>
+          </article>
+
+          <article class="product-card">
+            <header class="card-top">
+              <h3>Rogue</h3>
+            </header>
+            <div class="card-center">
+              <img src="../images/rogue.png" alt="Comic Rogue" />
+            </div>
+            <footer class="card-bottom">
+              <p class="description">Resurrección Vol. 1</p>
+              <div class="price-row">
+                <span class="price">24.99€</span>
+                <button class="cart-btn">🛒</button>
+              </div>
+            </footer>
+          </article>
+
+          <article class="product-card">
+            <header class="card-top">
+              <h3>Magik</h3>
+            </header>
+            <div class="card-center">
+              <img src="../images/magik.png" alt="Comic Magik" />
+            </div>
+            <footer class="card-bottom">
+              <p class="description">Resurrección Vol. 1</p>
+              <div class="price-row">
+                <span class="price">24.99€</span>
+                <button class="cart-btn">🛒</button>
+              </div>
+            </footer>
+          </article>
+
+          <article class="product-card">
+            <header class="card-top">
+              <h3>Black Widow</h3>
+            </header>
+            <div class="card-center">
+              <img src="../images/blackWidow.png" alt="Comic Black Widow" />
+            </div>
+            <footer class="card-bottom">
+              <p class="description">Resurrección Vol. 1</p>
+              <div class="price-row">
+                <span class="price">24.99€</span>
+                <button class="cart-btn">🛒</button>
+              </div>
+            </footer>
+          </article>
+
+          <article class="product-card">
+            <header class="card-top">
+              <h3>Peni Parker</h3>
+            </header>
+            <div class="card-center">
+              <img src="../images/peni.png" alt="Comic Peni" />
+            </div>
+            <footer class="card-bottom">
+              <p class="description">Resurrección Vol. 1</p>
+              <div class="price-row">
+                <span class="price">24.99€</span>
+                <button class="cart-btn">🛒</button>
+              </div>
+            </footer>
+          </article>
+
+          <article class="product-card">
+            <header class="card-top">
+              <h3>Psylocke</h3>
+            </header>
+            <div class="card-center">
+              <img src="../images/psylocke.png" alt="Comic Psylocke" />
+            </div>
+            <footer class="card-bottom">
+              <p class="description">Resurrección Vol. 1</p>
+              <div class="price-row">
+                <span class="price">24.99€</span>
+                <button class="cart-btn">🛒</button>
+              </div>
+            </footer>
+          </article>
+
+          <article class="product-card">
+            <header class="card-top">
+              <h3>Storm</h3>
+            </header>
+            <div class="card-center">
+              <img src="../images/storm.png" alt="Comic Storm" />
+            </div>
+            <footer class="card-bottom">
+              <p class="description">Resurrección Vol. 1</p>
+              <div class="price-row">
+                <span class="price">24.99€</span>
+                <button class="cart-btn">🛒</button>
+              </div>
+            </footer>
+          </article>
+
+          <article class="product-card">
+            <header class="card-top">
+              <h3>Scarlet Witch</h3>
+            </header>
+            <div class="card-center">
+              <img src="../images/scarletWitch.png" alt="Comic scarletWitch" />
+            </div>
+            <footer class="card-bottom">
+              <p class="description">Resurrección Vol. 1</p>
+              <div class="price-row">
+                <span class="price">24.99€</span>
+                <button class="cart-btn">🛒</button>
+              </div>
+            </footer>
+          </article>
+
+          <article class="product-card">
+            <header class="card-top">
+              <h3>Elsa BloodStone</h3>
+            </header>
+            <div class="card-center">
+              <img src="../images/elsa.png" alt="Comic Elsa BloodStone" />
+            </div>
+            <footer class="card-bottom">
+              <p class="description">Resurrección Vol. 1</p>
+              <div class="price-row">
+                <span class="price">24.99€</span>
+                <button class="cart-btn">🛒</button>
+              </div>
+            </footer>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="main-footer"> <!-- Pie de página -->
+      <div class="footer-container">
+        <div class="footer-social"> <!-- Iconos de redes sociales -->
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+            alt="WhatsApp"
+          />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg"
+            alt="Instagram"
+          />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg"
+            alt="TikTok"
+          />
+        </div>
+        <nav class="footer-legal"> <!-- Enlaces legales -->
+          <a href="#">Política de Privacidad</a>
+          <a href="#">Cookies</a>
+        </nav>
+      </div>
+      <div class="footer-copyright"> <!-- Derechos de autor -->
+        <p>© Esteban González Morales</p>
+      </div>
+    </footer>
+  </body>
+</html>

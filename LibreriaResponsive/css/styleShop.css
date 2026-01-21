@@ -1,0 +1,300 @@
+/* --- VARIABLES --- */
+:root {
+  --bright-red: #f60e0e;
+  --light-red: #f84c4c;
+  --dark-red: #bb0707;
+  --grey-btn: #d9d9d9;
+  --white: #ffffff;
+  --container-width: 90em; /* 1440px / 16 */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--light-red);
+  color: var(--white);
+}
+
+.container {
+  width: var(--container-width);
+  margin: 0 auto;
+}
+
+/* --- HEADER Y NAV (Iguales para consistencia) --- */
+.main-header {
+  background-color: var(--dark-red);
+  height: 7.5em; /* 120px / 16 */
+  border-bottom: 0.25em solid var(--bright-red); /* 4px / 16 */
+}
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+.brand-title {
+  font-family: "Bangers", cursive;
+  font-size: 2.8rem;
+  padding-left: 2.5em; /* 40px / 16 */
+}
+.logo-container {
+  background: #fdfaf0;
+  height: 100%;
+  width: 13.75em; /* 220px / 16 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo-container img {
+  height: 80%;
+}
+
+.main-nav {
+  background-color: var(--bright-red);
+  padding: 0.9375em 0; /* 15px / 16 */
+}
+.nav-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2.5em; /* 40px / 16 */
+}
+.search-box {
+  background: var(--grey-btn);
+  border-radius: 1.25em; /* 20px / 16 */
+  padding: 0.5em 0.9375em; /* 8px 15px / 16 */
+  width: 25em; /* 400px / 16 */
+  display: flex;
+  align-items: center;
+}
+.search-box input {
+  border: none;
+  background: transparent;
+  width: 100%;
+  padding-left: 0.625em; /* 10px / 16 */
+  outline: none;
+}
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 0.625em; /* 10px / 16 */
+}
+.nav-button {
+  background: var(--grey-btn);
+  color: black;
+  padding: 0.5em 1.25em; /* 8px 20px / 16 */
+  border-radius: 1.25em; /* 20px / 16 */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* --- LAYOUT TIENDA (2 Columnas) --- */
+.shop-layout {
+  display: grid;
+  grid-template-columns: 1fr 3fr; /* 25% sidebar, 75% productos */
+  margin-top: 1.875em;
+  gap: 1.25em;
+}
+
+/* Categorías (25%) */
+.categories-sidebar {
+  flex: 0 0 25%;
+  background-color: var(--dark-red);
+  border-radius: 0.625em; /* 10px / 16 */
+  padding: 1.25em; /* 20px / 16 */
+  min-height: 50em; /* 800px / 16 */
+}
+
+.sidebar-title {
+  font-family: "Bangers", cursive;
+  font-size: 2rem;
+  border-bottom: 0.125em solid var(--bright-red); /* 2px / 16 */
+  margin-bottom: 1.25em; /* 20px / 16 */
+}
+.category-list ul {
+  list-style: none;
+}
+.category-list li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 0.625em; /* 10px / 16 */
+  font-weight: bold;
+  transition: 0.3s;
+}
+.category-list li a:hover {
+  background: var(--bright-red);
+  border-radius: 0.3125em; /* 5px / 16 */
+}
+
+/* Productos (75%) */
+.products-catalog {
+  flex: 0 0 75%;
+}
+
+.catalog-header {
+  background-color: var(--dark-red);
+  padding: 0.9375em; /* 15px / 16 */
+  text-align: center;
+  border-radius: 0.625em; /* 10px / 16 */
+  margin-bottom: 1.875em; /* 30px / 16 */
+}
+
+.catalog-header h2 {
+  font-family: "Bangers", cursive;
+  font-size: 2.5rem;
+  letter-spacing: 0.125em; /* 2px / 16 */
+}
+
+/* GRID DE PRODUCTOS */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25em; /* 20px / 16 */
+}
+
+/* TARJETA DE PRODUCTO (Jerarquía Vertical) */
+.product-card {
+  background-color: var(--bright-red);
+  padding: 0.9375em; /* 15px / 16 */
+  border-radius: 0.5em; /* 8px / 16 */
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0.25em 0.625em rgba(0, 0, 0, 0.2); /* 4px 10px / 16 */
+  transition: transform 0.2s;
+}
+
+.product-card:hover {
+  transform: translateY(-0.3125em); /* -5px / 16 */
+}
+
+/* Superior: Nombre */
+.card-top {
+  margin-bottom: 0.625em; /* 10px / 16 */
+  text-align: center;
+}
+.card-top h3 {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.badge {
+  background: yellow;
+  color: black;
+  font-size: 0.7rem;
+  padding: 0.125em 0.5em; /* 2px 8px / 16 */
+  border-radius: 0.625em; /* 10px / 16 */
+  text-transform: uppercase;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 0.3125em; /* 5px / 16 */
+}
+
+/* Centro: Imagen */
+.card-center {
+  background: white;
+  padding: 0.3125em; /* 5px / 16 */
+  border-radius: 0.3125em; /* 5px / 16 */
+  display: flex;
+  justify-content: center;
+}
+.card-center img {
+  width: 100%;
+  height: 17.5em; /* 280px / 16 */
+  object-fit: contain; /* Ajusta la imagen sin recortar */
+}
+
+/* Inferior: Descripción y Precio */
+.card-bottom {
+  margin-top: 0.625em; /* 10px / 16 */
+}
+.description {
+  font-size: 0.9rem;
+  margin-bottom: 0.625em; /* 10px / 16 */
+  opacity: 0.9;
+  text-align: center;
+}
+.price-row {
+  display: flex; 
+  justify-content: space-between;
+  align-items: center; 
+}
+.price {
+  color: #00ff00;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+.cart-btn {
+  background: black;
+  border: none;
+  padding: 0.3125em 0.625em; /* 5px 10px / 16 */
+  border-radius: 0.3125em; /* 5px / 16 */
+  cursor: pointer; 
+  font-size: 1.2rem;
+}
+
+/* --- ESTILOS DEL PIE DE PÁGINA --- */
+.main-footer {
+  background-color: var(--dark-red);
+  padding: 2.5em 0 1.25em 0; /* 40px 20px / 16 */
+  color: var(--white);
+  width: auto;
+  margin-top: 3.125em; /* 50px / 16 */
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5em; /* 80px / 16 */
+  margin-bottom: 1.875em; /* 30px / 16 */
+}
+
+/* Redes Sociales a la izquierda */
+.footer-social {
+  display: flex;
+  gap: 1.25em; /* 20px / 16 */
+}
+
+.footer-social img {
+  width: 3.75em; /* 60px / 16 */
+  height: 3.75em; /* 60px / 16 */
+  background-color: white;
+  border-radius: 50%;
+  padding: 0.125em; /* 2px / 16 */
+  transition: transform 0.3s;
+}
+
+.footer-social img:hover {
+  transform: scale(1.1);
+}
+
+/* Enlaces legales (Grande y con peso) */
+.footer-legal {
+  display: flex;
+  gap: 3.75em; /* 60px / 16 */
+}
+
+.footer-legal a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Copyright centrado abajo */
+.footer-copyright {
+  text-align: center;
+  border-top: 0.0625em solid rgba(255, 255, 255, 0.1); /* 1px / 16 */
+  padding-top: 1.25em; /* 20px / 16 */
+}
+
+.footer-copyright p {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
