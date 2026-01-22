@@ -20,9 +20,11 @@ body {
   color: var(--white);
 }
 
+/* Ajuste base para que el contenedor no desborde en móviles */
 .container {
-  width: var(--container-width);
-  margin: 0 auto;
+    width: 95%; /* Cambiamos de ancho fijo a flexible */
+    max-width: var(--container-width);
+    margin: 0 auto;
 }
 
 /* --- HEADER Y NAV (Iguales para consistencia) --- */
@@ -218,6 +220,11 @@ body {
   opacity: 0.9;
   text-align: center;
 }
+
+.hamburger, .menu-checkbox {
+  display: none; /* Oculto en desktop */
+}
+
 .price-row {
   display: flex; 
   justify-content: space-between;
@@ -297,4 +304,104 @@ body {
 .footer-copyright p {
   font-size: 1.1rem;
   font-weight: bold;
+}
+
+/* --- LÓGICA DEL MENÚ HAMBURGUESA --- */
+
+/* Ocultar el checkbox y el icono de hamburguesa por defecto (Desktop) */
+.menu-checkbox, .hamburger {
+    display: none;
+}
+
+/* Ajuste de nav-flex para que el buscador y el menú convivan bien */
+.nav-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2.5em;
+}
+
+@media (max-width: 1024px) {
+    /* La columna lateral pasa a estar arriba ocupando todo el ancho */
+    .shop-layout {
+        grid-template-columns: 1fr; 
+        gap: 2em;
+    }
+
+    .categories-sidebar {
+        min-height: auto; /* Quitamos la altura fija de 800px */
+        flex: none;
+    }
+
+    /* Catálogo: 2 productos por línea (puedes cambiar a 3 si prefieres) */
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Ajuste del footer para que no se vea apretado */
+    .footer-legal a {
+        font-size: 1.5rem;
+    }
+}
+@media (max-width: 768px) {
+     /* Lógica Menú Hamburguesa */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    margin-bottom: 15px;
+  }
+  
+  .hamburger span {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    border-radius: 2px;
+  }
+
+  /* El menú desaparece por defecto */
+  .nav-menu {
+    display: none; 
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    padding-left: 20%;
+  }
+
+    /* LÓGICA: Cuando el checkbox esté marcado, mostrar el menú */
+    .menu-checkbox:checked ~ .nav-menu {
+        display: flex;
+    }
+
+    /* Hacer que el buscador sea más pequeño en móvil si es necesario */
+    .search-box {
+        width: auto;
+        max-width: 150px;
+    }
+    /* Catálogo: Un solo producto por fila */
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Ajustes del Footer para móvil */
+    .footer-container {
+        flex-direction: column;
+        gap: 1.5em;
+        padding: 0 1em;
+    }
+
+    .footer-legal {
+        flex-direction: column;
+        gap: 1em;
+        align-items: center;
+    }
+
+    .footer-legal a {
+        font-size: 1.2rem;
+    }
+    
+    .search-box {
+        width: 100%; /* Buscador a ancho completo */
+    }
 }

@@ -20,25 +20,28 @@
       </div>
     </header>
 
-    <nav class="main-nav"> <!-- Navegación -->
-      <div class="container nav-flex">
-        <form class="search-box"> <!-- Barra de búsqueda -->
-          <span class="search-icon">🔍</span>
-          <input
-            type="text"
-            placeholder="Buscar cómics..."
-            aria-label="Buscar"
-          />
-        </form> 
-        <ul class="nav-menu">
-          <li><a href="../html/index.html" class="nav-button">Home</a></li>
-          <li>
-            <a href="paginaCompra.html" class="nav-button">Tienda on-line</a>
-          </li>
-          <li><a href=".footer" class="nav-button">Contacto</a></li>
-        </ul>
-      </div>
-    </nav>
+    <nav class="main-nav">
+  <div class="container nav-flex">
+    <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+    
+    <label for="menu-toggle" class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <ul class="nav-menu">
+      <li><a href="../html/index.html" class="nav-button">Home</a></li>
+      <li><a href="paginaCompra.html" class="nav-button">Tienda on-line</a></li>
+      <li><a href=".footer" class="nav-button">Contacto</a></li>
+    </ul>
+
+    <form class="search-box">
+      <span class="search-icon">🔍</span>
+      <input type="text" placeholder="Buscar cómics..." aria-label="Buscar" />
+    </form>
+  </div>
+</nav>
 
     <main class="container shop-layout"> <!-- Layout de la tienda -->
       <aside class="categories-sidebar"> <!-- Barra lateral de categorías -->
