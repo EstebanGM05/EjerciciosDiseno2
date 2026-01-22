@@ -343,7 +343,7 @@ body {
         font-size: 1.5rem;
     }
 }
-@media (max-width: 768px) {
+@media (max-width: 600px) {
      /* Lógica Menú Hamburguesa */
   .hamburger {
     display: flex;
