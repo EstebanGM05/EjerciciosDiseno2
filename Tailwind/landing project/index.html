@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeCraft</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white m-0 p-0">
+    
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 w-full bg-black z-30 px-4 py-4 border-b border-gray-800">
+        <div class="flex justify-between items-center">
+            <!-- Logo/Título -->
+            <h1 class="text-2xl font-bold text-white tracking-wider">CodeCraft</h1>
+            
+            <!-- Menú Hamburguesa (solo móvil) -->
+            <button id="menuToggle" class="md:hidden text-white text-3xl focus:outline-none hover:text-gray-300 transition-colors">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            
+            <!-- Nav Desktop (tablet y pantallas más grandes) -->
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="recursos.html" class="text-gray-300 hover:text-white transition-colors duration-300 font-semibold">Recursos</a>
+                <a href="formulario.html" class="bg-white text-black font-bold py-3 px-8 rounded-full hover:bg-gray-200 transition-all duration-300 shadow-lg">
+                    Acceder al curso
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Menú desplegable pantalla completa (solo móvil) -->
+    <div id="menu" class="md:hidden fixed top-0 left-0 right-0 w-full h-screen bg-black transform -translate-y-full transition-transform duration-500 z-40 flex flex-col items-center justify-center space-y-8">
+        <button class="absolute top-6 right-6 text-white text-3xl focus:outline-none hover:text-gray-300 transition-colors">
+            <svg id="closeMenu" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        
+        <div class="text-center space-y-8">
+            <a href="recursos.html" class="block text-white text-2xl font-semibold hover:text-gray-300 transition-colors duration-300">
+                Recursos
+            </a>
+            
+            <a href="formulario.html" class="block w-full bg-white text-black text-2xl font-bold px-12 py-4 rounded-full hover:bg-gray-200 hover:scale-105 transition-all duration-300 shadow-lg text-center">
+                Acceder al curso
+            </a>
+        </div>
+    </div>
+
+    <!-- Contenido principal -->
+    <main class="pt-24 pb-8 px-4 md:px-8 md:max-w-5xl md:mx-auto">
+        
+        <!-- Hero Section con Imagen de Fondo -->
+        <section class="mb-12 rounded-3xl overflow-hidden shadow-2xl h-96 md:h-96 relative md:4xl" 
+                 style="background-image: url('./src/assets/image.png'); background-size: cover; background-position: center;">
+            
+            <!-- Overlay oscuro (solo móvil) -->
+            <div class="md:hidden absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+            
+            <!-- Contenido Hero Móvil (centrado) -->
+            <div class="md:hidden relative text-center z-10 px-4 flex flex-col items-center justify-center w-full h-full">
+                <h2 class="text-4xl font-bold mb-4 leading-tight">
+                    Domina CSS desde cero
+                </h2>
+                
+                <p class="text-gray-300 mb-6 leading-relaxed text-base max-w-2xl mx-auto">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Unde qui ne pueris quidem essent, ab illo diem praeterea non placat nisi blanditiis doloribus quaeratur similique est postamus temporibus expedita aliquam. Dolorum optio expediet velt totam.
+                </p>
+                
+                <a href="formulario.html" class="inline-block bg-white text-black font-bold py-4 px-10 rounded-full hover:bg-gray-200 hover:scale-105 transition-all duration-300 text-lg shadow-lg">
+                    Comenzar Ahora
+                </a>
+            </div>
+            
+            <!-- Contenido Hero Tablet (abajo izquierda, 60% ancho) -->
+            <div class="hidden md:flex absolute bottom-0 left-0 z-10 p-8 w-3/5 flex-col justify-end h-full bg-gradient-to-r from-black via-black/90 to-transparent">
+                <h2 class="text-4xl font-bold mb-3 leading-tight">
+                    Domina CSS desde cero
+                </h2>
+                
+                <p class="text-gray-300 mb-6 leading-relaxed text-sm">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Unde qui ne pueris quidem essent, ab illo diem praeterea non placat nisi blanditiis doloribus quaeratur similique est postamus temporibus expedita aliquam.
+                </p>
+                
+                <a href="formulario.html" class="inline-block bg-white text-black font-bold py-3 px-8 rounded-full hover:bg-gray-200 hover:scale-105 transition-all duration-300 text-base shadow-lg">
+                    Comenzar Ahora
+                </a>
+            </div>
+        </section>
+
+        <!-- Tarjetas Section -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            
+            <!-- Tarjeta 1 -->
+            <div class="bg-gray-950 rounded-2xl p-8 md:p-10 hover:bg-gray-900 transition-all duration-300 border border-gray-800 hover:border-gray-700">
+                <div class="mb-4">
+                    <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                </div>
+                <h3 class="text-white text-xl font-bold mb-3">Técnicas Avanzadas</h3>
+                <p class="text-gray-400">Aprende las técnicas más avanzadas de CSS para crear diseños modernos y responsivos con flexibilidad.</p>
+            </div>
+
+            <!-- Tarjeta 2 -->
+            <div class="bg-gray-950 rounded-2xl p-8 md:p-10 hover:bg-gray-900 transition-all duration-300 border border-gray-800 hover:border-gray-700">
+                <div class="mb-4">
+                    <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                    </svg>
+                </div>
+                <h3 class="text-white text-xl font-bold mb-3">Personalización Total</h3>
+                <p class="text-gray-400">Personaliza tus proyectos con variables CSS y temas personalizados de forma sencilla y efectiva.</p>
+            </div>
+
+            <!-- Tarjeta 3 -->
+            <div class="bg-gray-950 rounded-2xl p-8 md:p-10 hover:bg-gray-900 transition-all duration-300 border border-gray-800 hover:border-gray-700">
+                <div class="mb-4">
+                    <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                    </svg>
+                </div>
+                <h3 class="text-white text-xl font-bold mb-3">Garantía de Calidad</h3>
+                <p class="text-gray-400">Todos nuestros recursos están diseñados con los más altos estándares de calidad profesional.</p>
+            </div>
+
+            <!-- Tarjeta 4 -->
+            <div class="bg-gray-950 rounded-2xl p-8 md:p-10 hover:bg-gray-900 transition-all duration-300 border border-gray-800 hover:border-gray-700">
+                <div class="mb-4">
+                    <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <h3 class="text-white text-xl font-bold mb-3">Accesible y Moderno</h3>
+                <p class="text-gray-400">Una plataforma moderna y fácil de usar, diseñada pensando en la mejor experiencia del usuario.</p>
+            </div>
+
+        </section>
+
+        <!-- Estadísticas Section -->
+        <section class="mb-16 mt-16">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-gray-950 rounded-2xl p-6 md:p-8 border border-gray-800 text-center">
+                    <h3 class="text-4xl md:text-5xl font-bold text-white mb-2">5K+</h3>
+                    <p class="text-gray-400 text-sm">Estudiantes Activos</p>
+                </div>
+                <div class="bg-gray-950 rounded-2xl p-6 md:p-8 border border-gray-800 text-center">
+                    <h3 class="text-4xl md:text-5xl font-bold text-white mb-2">100+</h3>
+                    <p class="text-gray-400 text-sm">Horas de Contenido</p>
+                </div>
+                <div class="bg-gray-950 rounded-2xl p-6 md:p-8 border border-gray-800 text-center">
+                    <h3 class="text-4xl md:text-5xl font-bold text-white mb-2">95%</h3>
+                    <p class="text-gray-400 text-sm">Satisfacción</p>
+                </div>
+                <div class="bg-gray-950 rounded-2xl p-6 md:p-8 border border-gray-800 text-center">
+                    <h3 class="text-4xl md:text-5xl font-bold text-white mb-2">24/7</h3>
+                    <p class="text-gray-400 text-sm">Soporte</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimoniales Section -->
+        <section class="mb-16">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">Lo que dicen nuestros estudiantes</h2>
+                <p class="text-gray-400">Miles de personas ya han transformado su carrera con CodeCraft</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-gray-950 rounded-2xl p-8 border border-gray-800">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=50&h=50&fit=crop" alt="María García" class="w-12 h-12 rounded-full mr-4 object-cover">
+                        <div>
+                            <h4 class="text-white font-bold">María García</h4>
+                            <p class="text-gray-500 text-sm">Diseñadora UX</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center mb-4">
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                    </div>
+                    <p class="text-gray-300">"CodeCraft cambió mi forma de entender CSS. Ahora puedo crear diseños responsivos sin esfuerzo. ¡Altamente recomendado!"</p>
+                </div>
+                <div class="bg-gray-950 rounded-2xl p-8 border border-gray-800">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=50&h=50&fit=crop" alt="Carlos López" class="w-12 h-12 rounded-full mr-4 object-cover">
+                        <div>
+                            <h4 class="text-white font-bold">Carlos López</h4>
+                            <p class="text-gray-500 text-sm">Desarrollador Frontend</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center mb-4">
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                    </div>
+                    <p class="text-gray-300">"Los proyectos prácticos fueron increíbles. Pude aplicar todo lo aprendido en mis proyectos reales de inmediato."</p>
+                </div>
+                <div class="bg-gray-950 rounded-2xl p-8 border border-gray-800">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=50&h=50&fit=crop" alt="Sofia Martínez" class="w-12 h-12 rounded-full mr-4 object-cover">
+                        <div>
+                            <h4 class="text-white font-bold">Sofia Martínez</h4>
+                            <p class="text-gray-500 text-sm">Estudiante de Ingeniería</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center mb-4">
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                    </div>
+                    <p class="text-gray-300">"Excelente estructura de contenido. Desde lo básico hasta lo avanzado de forma muy bien explicada."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Planes de Precios Section -->
+        <section class="mb-16">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">Planes Accesibles</h2>
+                <p class="text-gray-400">Elige el plan que mejor se adapte a ti</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-gray-950 rounded-2xl p-8 border border-gray-800">
+                    <h3 class="text-2xl font-bold text-white mb-2">Básico</h3>
+                    <p class="text-gray-400 mb-4">Para comenzar</p>
+                    <div class="text-4xl font-bold text-white mb-6">$29<span class="text-sm text-gray-400">/mes</span></div>
+                    <ul class="space-y-3 mb-8 text-gray-300 text-sm">
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Acceso a 50 lecciones</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Soporte por email</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Certificado básico</li>
+                    </ul>
+                    <a href="formulario.html" class="block w-full bg-gray-800 text-white font-bold py-3 rounded-lg hover:bg-gray-700 transition-all text-center">Comenzar</a>
+                </div>
+                <div class="bg-gray-950 rounded-2xl p-8 border-2 border-white relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-white text-black px-4 py-1 rounded-full text-sm font-bold">Más Popular</div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Pro</h3>
+                    <p class="text-gray-400 mb-4">La opción recomendada</p>
+                    <div class="text-4xl font-bold text-white mb-6">$59<span class="text-sm text-gray-400">/mes</span></div>
+                    <ul class="space-y-3 mb-8 text-gray-300 text-sm">
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>100+ lecciones</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Soporte prioritario</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Certificado profesional</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Proyectos prácticos</li>
+                    </ul>
+                    <a href="formulario.html" class="block w-full bg-white text-black font-bold py-3 rounded-lg hover:bg-gray-200 transition-all text-center">Comenzar Ahora</a>
+                </div>
+                <div class="bg-gray-950 rounded-2xl p-8 border border-gray-800">
+                    <h3 class="text-2xl font-bold text-white mb-2">Premium</h3>
+                    <p class="text-gray-400 mb-4">Acceso total</p>
+                    <div class="text-4xl font-bold text-white mb-6">$99<span class="text-sm text-gray-400">/mes</span></div>
+                    <ul class="space-y-3 mb-8 text-gray-300 text-sm">
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Todo contenido disponible</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Mentoría personal</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Revisión de proyectos</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>Acceso VIP a comunidad</li>
+                    </ul>
+                    <a href="formulario.html" class="block w-full bg-gray-800 text-white font-bold py-3 rounded-lg hover:bg-gray-700 transition-all text-center">Comenzar</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Instructores Section -->
+        <section class="mb-16">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">Conoce a nuestros Instructores</h2>
+                <p class="text-gray-400">Aprende de profesionales del sector</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-gray-950 rounded-2xl p-8 border border-gray-800 text-center">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Juan Rodríguez" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                    <h3 class="text-xl font-bold text-white mb-2">Juan Rodríguez</h3>
+                    <p class="text-gray-400 text-sm mb-4">Experto en CSS | 10+ años experiencia</p>
+                    <p class="text-gray-300 text-sm">"Apasionado por enseñar CSS moderno y desarrollo web front-end responsivo."</p>
+                </div>
+                <div class="bg-gray-950 rounded-2xl p-8 border border-gray-800 text-center">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop" alt="Laura Sánchez" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                    <h3 class="text-xl font-bold text-white mb-2">Laura Sánchez</h3>
+                    <p class="text-gray-400 text-sm mb-4">Diseñadora UX/UI | 8+ años experiencia</p>
+                    <p class="text-gray-300 text-sm">"Especializada en crear interfaces hermosas utilizando CSS avanzado."</p>
+                </div>
+                <div class="bg-gray-950 rounded-2xl p-8 border border-gray-800 text-center">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop" alt="Miguel Díaz" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                    <h3 class="text-xl font-bold text-white mb-2">Miguel Díaz</h3>
+                    <p class="text-gray-400 text-sm mb-4">Desarrollador Full Stack | 12+ años</p>
+                    <p class="text-gray-300 text-sm">"Mentor en buenas prácticas de CSS y desarrollo web moderno."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="mb-16">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">Preguntas Frecuentes</h2>
+                <p class="text-gray-400">Resolvemos tus dudas</p>
+            </div>
+            <div class="space-y-4 max-w-3xl mx-auto">
+                <div class="bg-gray-950 rounded-xl p-6 border border-gray-800">
+                    <h3 class="text-white font-bold mb-2 flex items-center cursor-pointer">
+                        <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+                        ¿Cuánto tiempo dura el curso?
+                    </h3>
+                    <p class="text-gray-400 text-sm ml-9">El curso tiene aproximadamente 100+ horas de contenido que puedes completar a tu propio ritmo. La mayoría de estudiantes terminan en 3-4 meses.</p>
+                </div>
+                <div class="bg-gray-950 rounded-xl p-6 border border-gray-800">
+                    <h3 class="text-white font-bold mb-2 flex items-center cursor-pointer">
+                        <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+                        ¿Necesito experiencia previa?
+                    </h3>
+                    <p class="text-gray-400 text-sm ml-9">No, el curso comienza desde lo básico. Es perfecto para principiantes que quieren aprender CSS desde cero.</p>
+                </div>
+                <div class="bg-gray-950 rounded-xl p-6 border border-gray-800">
+                    <h3 class="text-white font-bold mb-2 flex items-center cursor-pointer">
+                        <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+                        ¿Qué incluye la suscripción?
+                    </h3>
+                    <p class="text-gray-400 text-sm ml-9">Acceso a todas las lecciones, proyectos prácticos, certificado de finalización, y soporte comunitario según tu plan.</p>
+                </div>
+                <div class="bg-gray-950 rounded-xl p-6 border border-gray-800">
+                    <h3 class="text-white font-bold mb-2 flex items-center cursor-pointer">
+                        <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+                        ¿Hay garantía de dinero de vuelta?
+                    </h3>
+                    <p class="text-gray-400 text-sm ml-9">Sí, ofrecemos garantía de 30 días de dinero de vuelta si no estás satisfecho con el curso.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Secundario Section -->
+        <section class="mb-16 bg-gradient-to-r from-gray-950 to-gray-900 rounded-3xl p-12 border border-gray-800 text-center">
+            <h2 class="text-4xl font-bold mb-4">¿Listo para transformar tu carrera?</h2>
+            <p class="text-gray-300 mb-8 text-lg">Únete a miles de estudiantes que ya están aprendiendo CSS con CodeCraft</p>
+            <a href="formulario.html" class="inline-block bg-white text-black font-bold py-4 px-12 rounded-full hover:bg-gray-200 hover:scale-105 transition-all duration-300 text-lg shadow-lg">
+                Inscribirse Ahora
+            </a>
+        </section>
+
+        <!-- Blog/Recursos Section -->
+        <section class="mb-16">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">Recursos y Artículos Recientes</h2>
+                <p class="text-gray-400">Mantente actualizado con tips y tutoriales</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-gray-950 rounded-2xl p-6 border border-gray-800 hover:border-gray-700 transition-all cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=250&fit=crop" alt="Flexbox" class="h-40 w-full object-cover rounded-xl mb-4">
+                    <div class="text-sm text-blue-400 font-semibold mb-2">Flexbox</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Mastering Flexbox: Guía Completa 2024</h3>
+                    <p class="text-gray-400 text-sm mb-4">Aprende todo lo necesario para dominar Flexbox y crear layouts perfectos...</p>
+                    <p class="text-gray-500 text-xs">3 min de lectura</p>
+                </div>
+                <div class="bg-gray-950 rounded-2xl p-6 border border-gray-800 hover:border-gray-700 transition-all cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=250&fit=crop" alt="Grid" class="h-40 w-full object-cover rounded-xl mb-4">
+                    <div class="text-sm text-pink-400 font-semibold mb-2">Grid</div>
+                    <h3 class="text-xl font-bold text-white mb-2">CSS Grid: Del Básico al Avanzado</h3>
+                    <p class="text-gray-400 text-sm mb-4">Crea layouts complejos con CSS Grid de forma sencilla y eficiente...</p>
+                    <p class="text-gray-500 text-xs">5 min de lectura</p>
+                </div>
+                <div class="bg-gray-950 rounded-2xl p-6 border border-gray-800 hover:border-gray-700 transition-all cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1557821552-17105176677c?w=400&h=250&fit=crop" alt="Animaciones" class="h-40 w-full object-cover rounded-xl mb-4">
+                    <div class="text-sm text-green-400 font-semibold mb-2">Animaciones</div>
+                    <h3 class="text-xl font-bold text-white mb-2">10 Animaciones CSS Impresionantes</h3>
+                    <p class="text-gray-400 text-sm mb-4">Crea animaciones hermosas con puro CSS sin depender de JavaScript...</p>
+                    <p class="text-gray-500 text-xs">4 min de lectura</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 border-t border-gray-800 mt-16">
+        <div class="px-4 md:px-8 py-8 md:max-w-5xl md:mx-auto">
+            <!-- Links del Footer -->
+            <div class="flex flex-wrap justify-center gap-4 mb-6 text-center">
+                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 text-sm">Condiciones</a>
+                <span class="text-gray-600">|</span>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 text-sm">Términos y condiciones</a>
+                <span class="text-gray-600">|</span>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 text-sm">Política de privacidad</a>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="text-center text-gray-500 text-xs pt-4 border-t border-gray-800">
+                <p>© 2024 CodeCraft. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

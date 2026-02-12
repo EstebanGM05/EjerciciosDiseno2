@@ -51,7 +51,7 @@ Si quieres aplicar el mismo color a más de un elemento, a veces puedes agruparl
 Si realmente quieres forzar que todos los hijos tengan una propiedad no heredable (como padding o background), puedes usar este truco avanzado:
 
 ```html
-<div class="[&>*]:bg-blue-500 [&>*]:p-4">
+<div class=":bg-blue-500 :p-4">
     <p>Soy azul con padding</p>
     <p>Yo también</p>
 </div>
@@ -89,9 +89,6 @@ Vamos a usar un icono SVG externo (ej. de boxicons.com) y controlarlo con Tailwi
     viewBox="0 0 24 24"
     class="w-12 h-12 fill-[#1877f2]"
 >
-    <!-- Path del SVG -->
-    <path d="M20 3H4a1..."></path>
-</svg>
 ```
 
 > [!NOTE]

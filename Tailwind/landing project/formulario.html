@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscribirse - CodeCraft</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white m-0 p-0">
+    
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 w-full bg-black z-30 px-4 py-4 border-b border-gray-800">
+        <div class="flex justify-between items-center">
+            <!-- Logo/Título -->
+            <a href="index.html" class="text-2xl font-bold text-white tracking-wider hover:text-gray-300 transition-colors">CodeCraft</a>
+            
+            <!-- Menú Hamburguesa (solo móvil) -->
+            <button id="menuToggle" class="md:hidden text-white text-3xl focus:outline-none hover:text-gray-300 transition-colors">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            
+            <!-- Nav Desktop (tablet y pantallas más grandes) -->
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="text-gray-300 hover:text-white transition-colors duration-300 font-semibold">Volver</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Menú desplegable pantalla completa (solo móvil) -->
+    <div id="menu" class="md:hidden fixed top-0 left-0 right-0 w-full h-screen bg-black transform -translate-y-full transition-transform duration-500 z-40 flex flex-col items-center justify-center space-y-8">
+        <button class="absolute top-6 right-6 text-white text-3xl focus:outline-none hover:text-gray-300 transition-colors">
+            <svg id="closeMenu" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        
+        <div class="text-center space-y-8">
+            <a href="index.html" class="block text-white text-2xl font-semibold hover:text-gray-300 transition-colors duration-300">
+                Volver
+            </a>
+        </div>
+    </div>
+
+    <!-- Contenido principal -->
+    <main class="pt-24 pb-8 px-4 md:px-8">
+        <div class="max-w-2xl mx-auto">
+            
+            <!-- Titulo Section -->
+            <section class="mb-12 text-center">
+                <h1 class="text-5xl md:text-5xl font-bold mb-4">
+                    Inscribirse en CodeCraft
+                </h1>
+                <p class="text-gray-400 text-lg">
+                    Completa el formulario para comenzar tu viaje en el mundo del CSS
+                </p>
+            </section>
+
+            <!-- Formulario -->
+            <section class="bg-gray-950 rounded-3xl p-8 md:p-12 border border-gray-800">
+                <form class="space-y-6">
+                    
+                    <!-- Nombre Completo -->
+                    <div>
+                        <label for="nombre" class="block text-white font-semibold mb-2">
+                            Nombre Completo
+                        </label>
+                        <input 
+                            type="text" 
+                            id="nombre" 
+                            name="nombre"
+                            placeholder="Juan Pérez"
+                            class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors duration-300"
+                            required
+                        >
+                    </div>
+
+                    <!-- Email -->
+                    <div>
+                        <label for="email" class="block text-white font-semibold mb-2">
+                            Correo Electrónico
+                        </label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email"
+                            placeholder="juan@example.com"
+                            class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors duration-300"
+                            required
+                        >
+                    </div>
+
+                    <!-- Contraseña -->
+                    <div>
+                        <label for="password" class="block text-white font-semibold mb-2">
+                            Contraseña
+                        </label>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password"
+                            placeholder="••••••••"
+                            class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors duration-300"
+                            required
+                        >
+                    </div>
+
+                    <!-- Experiencia -->
+                    <div>
+                        <label for="experiencia" class="block text-white font-semibold mb-2">
+                            Nivel de Experiencia
+                        </label>
+                        <select 
+                            id="experiencia" 
+                            name="experiencia"
+                            class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-white transition-colors duration-300"
+                            required
+                        >
+                            <option value="" disabled selected>Selecciona tu nivel</option>
+                            <option value="principiante" class="bg-gray-950">Principiante</option>
+                            <option value="intermedio" class="bg-gray-950">Intermedio</option>
+                            <option value="avanzado" class="bg-gray-950">Avanzado</option>
+                        </select>
+                    </div>
+
+                    <!-- Términos -->
+                    <div class="flex items-start space-x-3">
+                        <input 
+                            type="checkbox" 
+                            id="terminos" 
+                            name="terminos"
+                            class="w-5 h-5 mt-1 accent-white cursor-pointer"
+                            required
+                        >
+                        <label for="terminos" class="text-gray-400">
+                            Acepto los términos y condiciones y la política de privacidad
+                        </label>
+                    </div>
+
+                    <!-- Botón Enviar -->
+                    <button 
+                        type="submit" 
+                        class="w-full bg-white text-black font-bold py-4 rounded-full hover:bg-gray-200 hover:scale-105 transition-all duration-300 text-lg shadow-lg mt-8"
+                    >
+                        Inscribirse Ahora
+                    </button>
+
+                    <!-- Enlace Volver -->
+                    <p class="text-center text-gray-400 text-sm">
+                        ¿Ya tienes cuenta? <a href="index.html" class="text-white hover:text-gray-300 font-semibold">Volver atrás</a>
+                    </p>
+                </form>
+            </section>
+
+            <!-- Info adicional -->
+            <section class="mt-12 bg-gray-950 rounded-2xl p-8 border border-gray-800">
+                <h3 class="text-2xl font-bold mb-4">¿Por qué elegir CodeCraft?</h3>
+                <ul class="space-y-3 text-gray-300">
+                    <li class="flex items-start space-x-3">
+                        <svg class="w-6 h-6 text-white flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        </svg>
+                        <span>Acceso a contenido exclusivo de CSS avanzado</span>
+                    </li>
+                    <li class="flex items-start space-x-3">
+                        <svg class="w-6 h-6 text-white flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        </svg>
+                        <span>Certificado de finalización profesional</span>
+                    </li>
+                    <li class="flex items-start space-x-3">
+                        <svg class="w-6 h-6 text-white flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        </svg>
+                        <span>Soporte comunitario con otros estudiantes</span>
+                    </li>
+                    <li class="flex items-start space-x-3">
+                        <svg class="w-6 h-6 text-white flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        </svg>
+                        <span>Actualizaciones de contenido de por vida</span>
+                    </li>
+                </ul>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 border-t border-gray-800 mt-16">
+        <div class="px-4 md:px-8 py-8 md:max-w-5xl md:mx-auto">
+            <div class="flex flex-wrap justify-center gap-4 mb-6 text-center">
+                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 text-sm">Condiciones</a>
+                <span class="text-gray-600">|</span>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 text-sm">Términos y condiciones</a>
+                <span class="text-gray-600">|</span>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 text-sm">Política de privacidad</a>
+            </div>
+            
+            <div class="text-center text-gray-500 text-xs pt-4 border-t border-gray-800">
+                <p>© 2024 CodeCraft. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

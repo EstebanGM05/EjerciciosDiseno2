@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Dark Mode</title>
+    <!-- Using CDN for immediate preview, but you can switch to your local build -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-black flex items-center justify-center min-h-screen">
+    
+    <div class="bg-[#1a1a1a] p-8 rounded-2xl shadow-2xl w-400px border border-gray-800">
+        <h2 class="text-3xl font-bold mb-8 text-white">Sign Up</h2>
+        
+        <form action="">
+            <div class="mb-4">
+                <label for="nombre" class="block text-gray-300 text-sm font-medium mb-2">Name</label>
+                <input type="text" id="nombre" placeholder="Enter your name" class="bg-transparent border border-gray-600 text-gray-100 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3 placeholder-gray-500 outline-none transition-colors">
+            </div>
+            
+            <div class="mb-4">
+                <label for="email" class="block text-gray-300 text-sm font-medium mb-2">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" class="bg-transparent border border-gray-600 text-gray-100 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3 placeholder-gray-500 outline-none transition-colors">
+            </div>
+            
+            <div class="mb-6">
+                <label for="contra" class="block text-gray-300 text-sm font-medium mb-2">Password</label>
+                <input type="password" id="contra" placeholder="Enter your password" class="bg-transparent border border-gray-600 text-gray-100 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3 placeholder-gray-500 outline-none transition-colors">
+            </div>
+            
+            <div class="flex items-center mb-6">
+                <input id="terms" type="checkbox" class="w-4 h-4 text-orange-600 bg-orange-600 border-orange-600 rounded focus:ring-orange-600 ring-offset-gray-800 focus:ring-2">
+                <label for="terms" class="ml-2 text-sm font-medium text-gray-300">I agree with terms and conditions</label>
+            </div>
+
+            <button type="submit" class="w-full text-white bg-orange-600 hover:bg-orange-700 focus:ring-4 focus:ring-orange-800 font-bold rounded-lg text-sm px-5 py-3 text-center transition-colors">
+                Sign Up
+            </button>
+        </form>
+    </div>
+
+</body>
+</html>
